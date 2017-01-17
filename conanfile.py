@@ -15,11 +15,19 @@ class LibsbmlConan(ConanFile):
     default_options = "shared=False", "fpic=True", "packages=False"
     generators = "cmake"
     zip_folder_name = "libsbml-%s" % version
-    # exports="CMakeLists.txt"
-    requires = "libxml2/2.9.4@eliaskousk/stable",\
-               "libiconv/1.14@eliaskousk/stable",\
-               "zlib/1.2.9@lasote/stable",\
-               "bzip2/1.0.6@lasote/stable"
+
+    def config_options(self):
+        self.requires.add("libxml2/2.9.4@eliaskousk/stable", private=False)
+        self.options['libxml2'].shared = self.options.shared
+
+        self.requires.add("libiconv/1.14@eliaskousk/stable", private=False)
+        self.options['libiconv'].shared = self.options.shared
+
+        self.requires.add("zlib/1.2.9@lasote/stable", private=False)
+        self.options['zlib'].shared = self.options.shared
+
+        self.requires.add("bzip2/1.0.6@lasote/stable", private=False)
+        self.options['bzip2'].shared = self.options.shared
 
     def source(self):
         packages = "-plus-packages" if self.options.packages else ""
