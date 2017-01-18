@@ -17,16 +17,16 @@ class LibsbmlConan(ConanFile):
     zip_folder_name = "libsbml-%s" % version
 
     def config_options(self):
-        self.requires.add("libxml2/2.9.4@eliaskousk/stable", private=False)
+        self.requires("libxml2/2.9.4@eliaskousk/stable")
         self.options['libxml2'].shared = self.options.shared
 
-        self.requires.add("libiconv/1.14@eliaskousk/stable", private=False)
+        self.requires("libiconv/1.14@eliaskousk/stable")
         self.options['libiconv'].shared = self.options.shared
 
-        self.requires.add("zlib/1.2.9@lasote/stable", private=False)
+        self.requires("zlib/1.2.9@lasote/stable")
         self.options['zlib'].shared = self.options.shared
 
-        self.requires.add("bzip2/1.0.6@lasote/stable", private=False)
+        self.requires("bzip2/1.0.6@lasote/stable")
         self.options['bzip2'].shared = self.options.shared
 
     def source(self):

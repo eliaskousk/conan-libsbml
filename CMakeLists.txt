@@ -1,5 +1,0 @@
-PROJECT(conanlibsbml)
-cmake_minimum_required(VERSION 2.8)
-include(conanbuildinfo.cmake)
-CONAN_BASIC_SETUP()
-add_subdirectory("./libsbml-5.13.0")
