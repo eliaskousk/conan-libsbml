@@ -23,7 +23,7 @@ class LibsbmlConan(ConanFile):
         self.requires("libiconv/1.15@eliaskousk/stable")
         self.options['libiconv'].shared = self.options.shared
 
-        self.requires("zlib/1.2.9@lasote/stable")
+        self.requires("zlib/1.2.11@lasote/stable")
         self.options['zlib'].shared = self.options.shared
 
         self.requires("bzip2/1.0.6@lasote/stable")
