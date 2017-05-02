@@ -6,7 +6,7 @@ language: python
 env:
   global:
     - CONAN_UPLOAD=1
-    - CONAN_REFERENCE="libsbml/5.13.0"
+    - CONAN_REFERENCE="libsbml/5.15.0"
     - CONAN_USERNAME="eliaskousk"
     - CONAN_CHANNEL="stable"
     - CONAN_TOTAL_PAGES=4

@@ -7,7 +7,7 @@ import os
 
 class LibsbmlConan(ConanFile):
     name = "libsbml"
-    version = "5.13.0"
+    version = "5.15.0"
     license = "http://sbml.org/Software/libSBML/LibSBML_License"
     url="http://github.com/eliaskousk/conan-libsbml"
     settings = "os", "compiler", "build_type", "arch"
@@ -20,7 +20,7 @@ class LibsbmlConan(ConanFile):
         self.requires("libxml2/2.9.4@eliaskousk/stable")
         self.options['libxml2'].shared = self.options.shared
 
-        self.requires("libiconv/1.14@eliaskousk/stable")
+        self.requires("libiconv/1.15@eliaskousk/stable")
         self.options['libiconv'].shared = self.options.shared
 
         self.requires("zlib/1.2.9@lasote/stable")
@@ -32,7 +32,7 @@ class LibsbmlConan(ConanFile):
     def source(self):
         packages = "-plus-packages" if self.options.packages else ""
         zip_name = "libSBML-%s-core%s-src.tar.gz" % (self.version, packages)
-        url = "https://netcologne.dl.sourceforge.net/project/sbml/libsbml/5.13.0/stable/%s" % zip_name
+        url = "https://netcologne.dl.sourceforge.net/project/sbml/libsbml/%s/stable/%s" % (self.version, zip_name)
         download(url, zip_name)
         unzip(zip_name)
         os.unlink(zip_name)

@@ -8,7 +8,7 @@ username = os.getenv("CONAN_USERNAME", "eliaskousk")
 
 class LibsbmlTestConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
-    requires = "libsbml/5.13.0@%s/%s" % (username, channel)
+    requires = "libsbml/5.15.0@%s/%s" % (username, channel)
     generators = "cmake"
 
     def build(self):
